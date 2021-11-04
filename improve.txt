@@ -1,0 +1,9 @@
+MDRaisedButton:
+                text: "Change Theme"
+                pos_hint: {'center_x': .5, 'center_y': .5}
+                on_release: app.show_theme_picker()
+
+            MDRaisedButton:
+                text: "Change Alarm Ringtone"
+                pos_hint: {'center_x': .5, 'center_y': .3}
+                on_release: app.show_confirmation_dialog()  

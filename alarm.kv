@@ -1,0 +1,48 @@
+FloatLayout:
+
+    MDBottomNavigation:
+
+        MDBottomNavigationItem:
+            id: timer_scr
+            name: "screen 1"
+            text: "Timer"
+            icon: "clock-time-four"
+            MDToolbar:
+                title: "Timer"
+                pos_hint: {"top":1}
+            MDLabel:
+                id: timers
+                text: "00:00:00"
+                font_size:40
+                pos_hint: {"center_x":0.8,"center_y":0.7}
+                bold: True
+            MDRaisedButton:
+                id: stop_btn
+                text: "STOP"
+                sont_size: 24
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                disabled: True
+                on_press: app.stopMusic()
+            MDIconButton:
+                icon: "plus"
+                theme_text_color: "Custom"
+                text_color: app.theme_cls.primary_color
+                user_font_size: "50sp"
+                pos_hint: {'center_x': .9, 'center_y': 0.1}
+                on_release: app.show_time_picker()
+
+        MDBottomNavigationItem:
+            name: "screen 2"
+            text: "Settings"
+            icon: "cog"
+            MDToolbar:
+                title: "Settings"
+                pos_hint: {"top":1}
+            ScrollView:
+                size_hint_y: 0.90
+
+                MDList:
+
+                    OneLineListItem:
+                        text: "Change Theme And Appearance"
+                        on_press: app.show_theme_picker()  
